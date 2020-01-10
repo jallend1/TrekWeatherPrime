@@ -1,0 +1,18 @@
+nav{
+    width: 80%;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+li{
+    
+    list-style: none;
+    display: inline;
+}
+
+img{
+    border-radius: 10%;
+}
