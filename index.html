@@ -5,24 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trek Weather</title>
+    <link href="https://fonts.googleapis.com/css?family=Gayathri:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Star Trek</h1>
-    <nav>
-        <ul>
-            <li>Starfleet</li>
-            <li>Federation</li>
-            <li>Ferenginar</li>
-            <li>Vulcan</li>
-        </ul>
-    </nav>
-    <div>
-        <h2 id="place">Starfleet Academy</h2>
-        <img id="logo" src="images\starfleet.jpg" alt="">
-        <p id="temp">Current Temperature:</p>
+    <div id="container">
+        <header>
+            <h1>Star Trek Weather Conditions</h1>
+        </header>
+        <nav>
+            <ul>
+                <li>Starfleet</li>
+                <li>Federation</li>
+                <li>Ferenginar</li>
+                <li>Vulcan</li>
+            </ul>
+        </nav>
+        <main>
+            <h2 id="place">Starfleet Academy</h2>
+            <img id="logo" src="images\starfleet.jpg" alt="">
+            <p id="temp">Current Temperature: ::Accessing::</p>
+            <p id="conditions">Current Conditions: ::Accessing:: </p>
+            <p id="nets" class="hide">(Weather Modification Nets fully operational)</p>
+        </main>
+        <script src="forecast.js"></script>
+        <script src="app.js"></script>
     </div>
-    <script src="forecast.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>

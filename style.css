@@ -1,5 +1,25 @@
+body{
+    font-family: 'Gayathri', sans-serif;
+    background: #1a1a1d;
+    color: #CDC6C7;
+}
+
+#container{
+    width: 80%;
+    margin: auto;
+}
+
+header{
+    text-align: center;
+    color: #116466;
+}
+
 nav{
     width: 80%;
+    margin: auto;
+    padding-top: 1em;
+    padding-right: 2em;
+    border: solid 1px #66fcf1;
 }
 
 ul{
@@ -13,6 +33,27 @@ li{
     display: inline;
 }
 
+main{
+    width: 500px;
+    margin: auto;
+    padding-top: 2em;
+    text-align: center;
+}
+
+h2{
+    font-size: 2em;
+}
+
 img{
     border-radius: 10%;
+}
+
+.hide{
+    display: none;
+}
+
+.highlighted{
+    font-weight: 700;
+    font-size: 1.4em;
+    color: white;    
 }
