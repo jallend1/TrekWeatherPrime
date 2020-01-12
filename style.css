@@ -28,7 +28,6 @@ ul{
 }
 
 li{
-    
     list-style: none;
     display: inline;
 }
@@ -56,4 +55,8 @@ img{
     font-weight: 700;
     font-size: 1.4em;
     color: white;    
+}
+
+.warning{
+    color: red;
 }

@@ -13,21 +13,34 @@ const updatePlace =  (newCity) => {
     logo.setAttribute('alt', `The logo for ${newCity}`);
     getTemp(newCity)
         .then(data => {
-            if(newCity === "Vulcan" && data.temp < 25){data.temp += 15;} // Vulcan is never chilly
-            temp.innerHTML = `Current Temperature: ${data.temp}&deg C `;       // Updates page with current temp
-            if(newCity === "Ferenginar") {                     // Keeps Ferenginar Rainy
+            if(newCity === "Vulcan" && data.temp < 25){data.temp += 15;}                                    // Vulcan is never chilly
+            temp.innerHTML = `Current Temperature: ${data.temp}&deg C `;                                    // Updates page with current temp
+            if(newCity === "Ferenginar") {                                                                  // Keeps Ferenginar Rainy
                 const rainModifier = Math.floor(Math.random() * ferengiRain.length);
                 conditionDescription.innerText = `Current Conditions: ${ferengiRain[rainModifier]}`;     
             }
             else {conditionDescription.innerHTML = `Current Conditions: ${data.description}`}
             
-            // ** Weather Nets Only Available on Earth ** 
-            (data.description.includes('Clear') && (newCity === "Starfleet" || newCity === "Federation") )
-                ? nets.classList.remove('hide') 
-                : nets.classList.add('hide');
-            })
+            if((newCity === "Federation") || (newCity === "Starfleet")){
+                earth(data);
+            }
+            
+        })
             .catch(err => console.log(err));
 }
+
+const earth = (weather) => {
+    nets.classList.remove('hide');
+    if(weather.description.includes('Clear')){
+        nets.classList.remove('warning');
+        nets.textContent = "(Weather Modification Nets fully operational)";
+    }
+    else{
+        nets.textContent = "(Weather Modification Nets currently offline)"
+        nets.classList.add('warning');
+    }
+}
+
 
 ul.addEventListener('click', e => {
     if(e.target.tagName === 'LI'){
