@@ -20,17 +20,13 @@ const updatePlace =  (newCity) => {
                 conditionDescription.innerText = `Current Conditions: ${ferengiRain[rainModifier]}`;     
             }
             else {conditionDescription.innerHTML = `Current Conditions: ${data.description}`}
-            
-            if((newCity === "Federation") || (newCity === "Starfleet")){
-                earth(data);
-            }
-            
+            if((newCity === "Federation") || (newCity === "Starfleet")){earth(data);}                       // Activates Weather Modification Nets
         })
             .catch(err => console.log(err));
 }
 
-const earth = (weather) => {
-    nets.classList.remove('hide');
+const earth = (weather) => {                                                                                // If clear, Weather Nets work. 
+    nets.classList.remove('hide');                                                                          // Otherwise displays error
     if(weather.description.includes('Clear')){
         nets.classList.remove('warning');
         nets.textContent = "(Weather Modification Nets fully operational)";
@@ -41,14 +37,12 @@ const earth = (weather) => {
     }
 }
 
-
 ul.addEventListener('click', e => {
     if(e.target.tagName === 'LI'){
-        
         temp.innerText = "Current Temperature: ::Accessing::";
         conditionDescription.innerText = "Current Conditions: :: Accessing::";
-        nets.classList.add('hide'); // Removes Weather Nets in case we're transitioning off-world
-        li.forEach(listItem => listItem.classList.remove('highlighted'));
+        nets.classList.add('hide');                                                                         // Removes Weather Nets in case we're transitioning off-world
+        li.forEach(listItem => listItem.classList.remove('highlighted'));                                   // Removes current highlighted menu
         e.target.classList.add('highlighted');
         updatePlace(e.target.innerText)}
 });
